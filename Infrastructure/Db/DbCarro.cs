@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using minimal_api.Domain.Entities;
+using minimal_api.Domain.Enums;
 
 namespace minimal_api.Infrastructure.Db;
 public class DbCarro : DbContext
@@ -20,7 +21,7 @@ public class DbCarro : DbContext
                 Id = 1, // só no seed
                 Email = "administrador@teste.com",
                 Senha = "123456",
-                Perfil = "Adm"
+                Perfil = "Administrador"
             }
         );
     }

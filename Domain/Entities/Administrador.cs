@@ -1,5 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using minimal_api.Domain.Enums;
 
 namespace minimal_api.Domain.Entities;
 
@@ -10,11 +11,11 @@ public class Administrador
     public int Id { get; set; }
     [Required]
     [StringLength(255)]
-    public string Email { get; set;} = string.Empty;
+    public string Email { get; set; } = string.Empty;
     [Required]
     [StringLength(50)]
-    public string Senha { get; set;} = string.Empty;
+    public string Senha { get; set; } = string.Empty;
     [Required]
     [StringLength(10)]
-    public string Perfil { get; set;} = string.Empty;
+    public string Perfil { get; set; } = string.Empty;
 }
