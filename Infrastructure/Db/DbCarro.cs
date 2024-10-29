@@ -21,7 +21,7 @@ public class DbCarro : DbContext
                 Id = 1, // só no seed
                 Email = "administrador@teste.com",
                 Senha = "123456",
-                Perfil = "Administrador"
+                Perfil = "Adm"
             }
         );
     }
@@ -29,7 +29,7 @@ public class DbCarro : DbContext
     {
         if (optionsBuilder.IsConfigured == false) 
         {
-            var stringConexao = _configuracaoAppSettings.GetConnectionString("mysql")?.ToString();
+            var stringConexao = _configuracaoAppSettings.GetConnectionString("MySql")?.ToString();
             if (string.IsNullOrEmpty(stringConexao) == false)
             {
                 optionsBuilder.UseMySql(stringConexao, ServerVersion.AutoDetect(stringConexao));

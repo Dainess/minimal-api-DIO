@@ -28,6 +28,6 @@ public class AdministradorService(DbCarro dbCarro) : IAdministradorService
 
     public List<Administrador> Todos(int pagina, int itensPorPagina)
     {
-        return [.. _dbCarro.Administradores];
+        return [.. _dbCarro.Administradores.Skip((pagina - 1) * itensPorPagina).Take(itensPorPagina)];
     }
 }
