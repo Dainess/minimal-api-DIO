@@ -1,6 +1,5 @@
 using Microsoft.EntityFrameworkCore;
 using minimal_api.Domain.Entities;
-using minimal_api.Domain.Enums;
 
 namespace minimal_api.Infrastructure.Db;
 public class DbCarro : DbContext
@@ -27,13 +26,10 @@ public class DbCarro : DbContext
     }
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        if (optionsBuilder.IsConfigured == false) 
-        {
             var stringConexao = _configuracaoAppSettings.GetConnectionString("MySql")?.ToString();
-            if (string.IsNullOrEmpty(stringConexao) == false)
             {
+                Console.WriteLine(stringConexao);
                 optionsBuilder.UseMySql(stringConexao, ServerVersion.AutoDetect(stringConexao));
             }
-        }
     }
 }
